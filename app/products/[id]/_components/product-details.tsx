@@ -108,7 +108,7 @@ const ProducDetails = ({
           {/* Custo */}
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-1 text-muted-foreground">
-              <span className="text-xs"> Entrega</span>
+              <span className="text-xs"> Frete</span>
               <BikeIcon size={14} />
             </div>
 
@@ -124,17 +124,13 @@ const ProducDetails = ({
           {/*Tempo*/}
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-1 text-muted-foreground">
-              <span className="text-xs"> Entrega</span>
+              <span className="text-xs"> Tempo De Entrega</span>
               <TimerIcon size={14} />
             </div>
 
-            {Number(product.restaurant.deliveryFee) > 0 ? (
-              <p className="text-xs font-semibold">
-                {formatCurrency(Number(product.restaurant.deliveryFee))}
-              </p>
-            ) : (
-              <p className="text-xs font-semibold">Grátis</p>
-            )}
+            <p className="text-xs font-semibold">
+              {product.restaurant.deliveryTimeMinutes} min
+            </p>
           </div>
         </Card>
       </div>
